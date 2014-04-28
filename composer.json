@@ -16,6 +16,9 @@
         "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
+        "classmap": [
+            "tests"
+        ],
         "psr-4": {
             "BigName\\HtmlToMarkdown\\": "src/"
         }
