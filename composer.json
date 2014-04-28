@@ -1,0 +1,25 @@
+{
+    "name": "heybigname/html-to-markdown",
+    "version": "0.0.1",
+    "description": "HTML to Markdown Converter",
+    "authors": [
+        {
+            "name": "Shawn McCool",
+            "email": "shawn@heybigname.com",
+            "homepage": "http://heybigname.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "BigName\\HtmlToMarkdown\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "minimum-stability": "dev"
+}
