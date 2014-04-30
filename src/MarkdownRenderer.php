@@ -1,4 +1,4 @@
-<?php namespace BigName\HtmlToMarkdown; 
+<?php namespace BigName\HtmlToMarkdown;
 
 use BigName\HtmlToMarkdown\Tags\Tag;
 use BigName\HtmlToMarkdown\Tags\TagNotFoundException;
