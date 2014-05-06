@@ -2,6 +2,7 @@
 /working
 /.vagrant
 /tests/report
+/.idea
 composer.phar
 composer.lock
 vagrant_ansible_inventory_default
