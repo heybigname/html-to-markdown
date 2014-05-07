@@ -17,7 +17,7 @@ class Converter
         $this->renderer = $renderer;
     }
 
-    public function toMarkdown($html)
+    public function convert($html)
     {
         $node = $this->parser->parse($html);
         return $node->render($this->renderer);
