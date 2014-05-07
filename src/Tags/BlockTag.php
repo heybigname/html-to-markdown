@@ -2,10 +2,10 @@
 
 use BigName\HtmlToMarkdown\Node;
 
-class OlTag implements Tag
+class BlockTag implements Tag
 {
     public function render(Node $node, $text)
     {
-        return $text;
+        return "\n" . $text . "\n";
     }
 }

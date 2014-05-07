@@ -2,11 +2,11 @@
 
 use BigName\HtmlToMarkdown\Node;
 
-class ScriptTag implements Tag
+class HtmlTag implements Tag
 {
     public function render(Node $node, $text)
     {
-        return '<script' . $this->htmlAttributes($node->getAttributes()) . '>' . $node->getText() . '</script>';
+        return '<' . $node->getType() . $this->htmlAttributes($node->getAttributes()) . '>' . $node->getText() . '</' . $node->getType() . '>';
     }
 
     private function htmlAttributes($attributes)

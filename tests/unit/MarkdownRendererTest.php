@@ -15,14 +15,14 @@ class MarkdownRendererTest extends \UnitTest
         $renderer->addTag('strong', new Tags\StrongTag());
         $renderer->addTag('em', new Tags\EmTag());
         $renderer->addTag('li', new Tags\LiTag());
-        $renderer->addTag('body', new Tags\BodyTag());
+        $renderer->addTag('body', new Tags\PassThroughTag());
         $renderer->addTag('p', new Tags\PTag());
-        $renderer->addTag('ul', new Tags\UlTag());
+        $renderer->addTag('ul', new Tags\BlockTag());
         $renderer->addTag('h1', new Tags\H1Tag());
         $renderer->addTag('a', new Tags\ATag());
         $renderer->addTag('ol', new Tags\OlTag());
         $renderer->addTag('img', new Tags\ImgTag());
-        $renderer->addTag('script', new Tags\ScriptTag());
+        $renderer->addTag('script', new Tags\HtmlTag());
         $renderer->addTag('#cdata-section', new Tags\CdataSectionTag());
 
         $this->converter = new Converter($parser, $renderer);
