@@ -14,10 +14,6 @@ class MarkdownRenderer
 
     public function render(Node $node, $content)
     {
-        if ($node->getType() == '#text') {
-            return $node->getText();
-        }
-
         if ( ! isset($this->tags[$node->getType()])) {
             throw new TagNotFoundException('No rendering strategy found for tag type: ' . $node->getType());
         }
