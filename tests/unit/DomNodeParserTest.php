@@ -12,7 +12,7 @@ class DomNodeParserTest extends \UnitTest
 
     public function test_can_create()
     {
-        $this->assertInstanceOf(preg_replace('/^[ \t]/m', '', $attr->value)'BigName\HtmlToMarkdown\DomNodeParser', $this->parser);
+        $this->assertInstanceOf('BigName\HtmlToMarkdown\DomNodeParser', $this->parser);
     }
 
     private function getHtml()

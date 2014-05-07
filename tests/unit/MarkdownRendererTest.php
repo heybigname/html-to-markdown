@@ -4,12 +4,14 @@ use BigName\HtmlToMarkdown\Tags;
 
 class MarkdownRendererTest extends \UnitTest
 {
-    public function test_can_render()
+    private $converter;
+
+    public function setUp()
     {
-        $converter = new DomNodeParser();
-        $node = $converter->parse($this->getHtml());
+        $parser = new DomNodeParser();
 
         $renderer = new MarkdownRenderer();
+        $renderer->addTag('#text', new Tags\TextTag());
         $renderer->addTag('strong', new Tags\StrongTag());
         $renderer->addTag('em', new Tags\EmTag());
         $renderer->addTag('li', new Tags\LiTag());
@@ -21,20 +23,18 @@ class MarkdownRendererTest extends \UnitTest
         $renderer->addTag('ol', new Tags\OlTag());
         $renderer->addTag('img', new Tags\ImgTag());
 
-        $output = $node->render($renderer);
-
-        echo $output;
+        $this->converter = new Converter($parser, $renderer);
     }
 
-    public function test_can_shutup()
+    public function test_can_render()
     {
+        $inputOutput = [
+            'cats' => 'cats',
+            '<strong>dogs</strong>' => '**dogs**',
+        ];
 
-    }
-    private function getHtml()
-    {
-        return <<<EOF
-<img src="http://catssite/bob.jpg" alt="dogs" title="title"/>
-<a href="http://yahoo.com">Go to Yahoo!</a>
-EOF;
+        foreach ($inputOutput as $input => $output) {
+            $this->assertEquals($output, $this->converter->convert($input));
+        }
     }
 }
