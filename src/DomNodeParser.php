@@ -66,8 +66,13 @@ class DomNodeParser
 
         $attributes = [];
         foreach ($elem->attributes as $attr) {
-            $attributes[$attr->name] = $attr->value;
+            $attributes[$attr->name] = $this->cleanWhitespace($attr->value);
         }
         return $attributes;
+    }
+
+    private function cleanWhitespace($value)
+    {
+        return preg_replace('/^[ \t]/m', '', $value);
     }
 }
