@@ -11,6 +11,6 @@ class TextTag implements Tag
 
     private function cleanInitialWhitespace($value)
     {
-        return preg_replace('/^[ \t]/m', '', $value);
+        return preg_replace('/^\t/m', '', $value);
     }
 }
