@@ -22,6 +22,8 @@ class MarkdownRendererTest extends \UnitTest
         $renderer->addTag('a', new Tags\ATag());
         $renderer->addTag('ol', new Tags\OlTag());
         $renderer->addTag('img', new Tags\ImgTag());
+        $renderer->addTag('script', new Tags\ScriptTag());
+        $renderer->addTag('#cdata-section', new Tags\CdataSectionTag());
 
         $this->converter = new Converter($parser, $renderer);
     }
@@ -31,6 +33,7 @@ class MarkdownRendererTest extends \UnitTest
         $inputOutput = [
             'cats' => 'cats',
             '<strong>dogs</strong>' => '**dogs**',
+            '<strong>bob</strong><script tags="dogs">bob</script>' => '**bob**<script tags="dogs">bob</script>',
         ];
 
         foreach ($inputOutput as $input => $output) {

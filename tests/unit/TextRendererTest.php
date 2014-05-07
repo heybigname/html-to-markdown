@@ -9,12 +9,13 @@ class TextRendererTest extends \UnitTest
 
         $renderer = new TextRenderer;
 
-        //$renderer->render($node);
+//        $renderer->render($node);
     }
 
     private function getHtml()
     {
         return <<<EOF
+<script src="....">bob</script>
 <img src="http://catssite/bob.jpg" alt="dogs" title="title"/>
 <a href="http://yahoo.com">Go to Yahoo!</a>
 <p>

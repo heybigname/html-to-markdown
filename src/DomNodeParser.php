@@ -34,6 +34,10 @@ class DomNodeParser
 
     private function hydrate($parent, $element)
     {
+        if (is_null($element)) {
+            return;
+        }
+
         $childElements = $element->childNodes;
 
         if (is_null($childElements)) {

@@ -2,10 +2,10 @@
 
 use BigName\HtmlToMarkdown\Node;
 
-class UlTag implements Tag
+class CdataSectionTag implements Tag
 {
     public function render(Node $node, $text)
     {
-        return "\n" . $text . "\n";
+        return $text;
     }
 }
