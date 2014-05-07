@@ -1,6 +1,6 @@
 <?php namespace BigName\HtmlToMarkdown;
 
-class DomParserTest extends \UnitTest
+class DomNodeParserTest extends \UnitTest
 {
     private $parser;
 
@@ -12,7 +12,7 @@ class DomParserTest extends \UnitTest
 
     public function test_can_create()
     {
-        $this->assertInstanceOf('BigName\HtmlToMarkdown\DomParser', $this->parser);
+        $this->assertInstanceOf('BigName\HtmlToMarkdown\DomNodeParser', $this->parser);
     }
 
     private function getHtml()
