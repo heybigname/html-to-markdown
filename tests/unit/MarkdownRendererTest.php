@@ -6,8 +6,8 @@ class MarkdownRendererTest extends \UnitTest
 {
     public function test_can_render()
     {
-        $converter = new Converter;
-        $node = $converter->convert($this->getHtml());
+        $converter = new DomNodeParser();
+        $node = $converter->parse($this->getHtml());
 
         $renderer = new MarkdownRenderer();
         $renderer->addTag('strong', new Tags\StrongTag());

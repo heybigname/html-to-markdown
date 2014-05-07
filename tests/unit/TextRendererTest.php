@@ -4,8 +4,8 @@ class TextRendererTest extends \UnitTest
 {
     public function test_can_render()
     {
-        $converter = new Converter;
-        $node = $converter->convert($this->getHtml());
+        $converter = new DomNodeParser;
+        $node = $converter->parse($this->getHtml());
 
         $renderer = new TextRenderer;
 
