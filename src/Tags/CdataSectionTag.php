@@ -2,7 +2,7 @@
 
 use BigName\HtmlToMarkdown\Node;
 
-class CdataSectionTag implements Tag
+class CdataSectionTag extends Tag
 {
     public function render(Node $node, $text)
     {

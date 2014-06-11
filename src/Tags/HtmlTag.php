@@ -2,25 +2,13 @@
 
 use BigName\HtmlToMarkdown\Node;
 
-class HtmlTag implements Tag
+class HtmlTag extends Tag
 {
     public function render(Node $node, $text)
     {
-        return '<' . $node->getType() . $this->htmlAttributes($node->getAttributes()) . '>' . $node->getText() . '</' . $node->getType() . '>';
-    }
-
-    private function htmlAttributes($attributes)
-    {
-        if ( ! is_array($attributes)) {
-            return '';
-        }
-
-        $html = '';
-
-        foreach ($attributes as $key => $value) {
-            $html .= " {$key}=\"{$value}\"";
-        }
-
+        $html  = '<' . $node->getType() . $this->arrayToHtmlAttributes($node->getAttributes()) . '>';
+        $html .= $node->getText() ;
+        $html .= '</' . $node->getType() . '>';
         return $html;
     }
 }

@@ -2,10 +2,11 @@
 
 use BigName\HtmlToMarkdown\Node;
 
-class StrongTag implements Tag
+class StrongTag extends Tag
 {
     public function render(Node $node, $text)
     {
-        return preg_replace('/^(\s*)((\w|\s\w)*)(\s*)$/', '$1**$2**$4', $text);
+        list($preWhitespace, $text, $postWhitespace) = $this->cutWhitespaceFromText($text);
+        return "{$preWhitespace}**{$text}**$postWhitespace";
     }
 }

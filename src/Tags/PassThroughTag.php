@@ -2,7 +2,7 @@
 
 use BigName\HtmlToMarkdown\Node;
 
-class PassThroughTag implements Tag
+class PassThroughTag extends Tag
 {
     public function render(Node $node, $text)
     {

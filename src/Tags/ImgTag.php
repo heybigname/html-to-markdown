@@ -2,7 +2,7 @@
 
 use BigName\HtmlToMarkdown\Node;
 
-class ImgTag implements Tag
+class ImgTag extends Tag
 {
     public function render(Node $node, $text)
     {

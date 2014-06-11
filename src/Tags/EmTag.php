@@ -2,7 +2,7 @@
 
 use BigName\HtmlToMarkdown\Node;
 
-class EmTag implements Tag
+class EmTag extends Tag
 {
     public function render(Node $node, $text)
     {

@@ -2,7 +2,7 @@
 
 use BigName\HtmlToMarkdown\Node;
 
-class LiTag implements Tag
+class LiTag extends Tag
 {
     public function render(Node $node, $text)
     {

@@ -2,7 +2,7 @@
 
 use BigName\HtmlToMarkdown\Node;
 
-class H3Tag implements Tag
+class H3Tag extends Tag
 {
     public function render(Node $node, $text)
     {

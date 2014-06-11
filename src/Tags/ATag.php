@@ -2,11 +2,12 @@
 
 use BigName\HtmlToMarkdown\Node;
 
-class ATag implements Tag
+class ATag extends Tag
 {
     public function render(Node $node, $text)
     {
         $href = $node->getAttribute('href');
-        return "[{$node->getText()}]({$href})";
+        $text = $node->getText();
+        return "[{$text}]({$href})";
     }
 }
