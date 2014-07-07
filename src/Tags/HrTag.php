@@ -6,6 +6,6 @@ class HrTag extends Tag
 {
     public function render(Node $node, $text)
     {
-        return '- - -';
+        return '---------------------------------------';
     }
 }
